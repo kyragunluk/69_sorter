@@ -4,14 +4,22 @@
 import java.util.ArrayList;
 
 public class InsertionSorter extends Sorter {
-
+    private ArrayList<String> list;
+    private int alreadyInserted;
 
     /**
       Construct an instance to process the user's data
      */
     public InsertionSorter(  ArrayList< String> usersData) {
+        super(usersData);
+        list = usersData;
         for (int index = 0 ; index < usersData.size() ; index ++){
-            usersData = mySort(usersData,index);
+            alreadyInserted = index;
+            mySort();
+            System.out.println( "    dbg: "
+              + "after inserting element " + alreadyInserted
+              + " elements: " + list
+              );
         }
     }
 
@@ -19,19 +27,24 @@ public class InsertionSorter extends Sorter {
     /**
       sort the user's data, implementing insertion sort
      */
-    public void mySort(ArrayList< String> list, int alreadyInserted) {
+    public void mySort() {
         String valueToAdd = list.get(alreadyInserted);
-        for (int index = alreadyInserted ; index > 0 ; index --){
-            if (valueToAdd.compareTo(list.get(index-1)) > 0s ){
-                for (int i = alreadyInserted ; i > index ; i --){
-                    list.set(i,list.get(i-1));
+        if (valueToAdd.compareTo(list.get(0)) < 0){
+            for (int i = alreadyInserted ; i > 0 ; i --){
+                list.set(i,list.get(i-1));
+            }
+            list.set(0,valueToAdd);
+        }
+        else{
+            for (int index = alreadyInserted ; index > 0 ; index --){
+                if (valueToAdd.compareTo(list.get(index-1)) > 0 ){
+                    for (int i = alreadyInserted ; i > index ; i --){
+                        list.set(i,list.get(i-1));
+                    }
+                    list.set(index,valueToAdd);
+                    break;
                 }
-                list.set(index,valueToAdd);
             }
         }
-        for (int i = alreadyInserted ; i > 0 ; i --){
-            list.set(i,list.get(i-1));
-        }
-        list.set(0,valueToAdd);
     }
 }
