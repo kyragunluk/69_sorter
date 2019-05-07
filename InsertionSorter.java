@@ -8,7 +8,7 @@ public class InsertionSorter extends Sorter {
     private int alreadyInserted;
 
     /**
-      Construct an instance to process the user's data
+      Construct an instance to process the user's data.
      */
     public InsertionSorter(  ArrayList< String> usersData) {
         super(usersData);
