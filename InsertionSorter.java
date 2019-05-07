@@ -16,10 +16,12 @@ public class InsertionSorter extends Sorter {
         for (int index = 0 ; index < usersData.size() ; index ++){
             alreadyInserted = index;
             mySort();
+            /* debugging
             System.out.println( "    dbg: "
               + "after inserting element " + alreadyInserted
               + " elements: " + list
               );
+            */
         }
     }
 
@@ -34,10 +36,10 @@ public class InsertionSorter extends Sorter {
                 list.set(i,list.get(i-1));
             }
             list.set(0,valueToAdd);
-            // debugging
+            /* debugging
             System.out.println("value " + valueToAdd
             + " was moved to the beginning");
-
+            */
         }
         else{
             for (int index = alreadyInserted ; index > 0 ; index --){
@@ -46,9 +48,10 @@ public class InsertionSorter extends Sorter {
                         list.set(i,list.get(i-1));
                     }
                     list.set(index,valueToAdd);
-                    // debugging
+                    /* debugging
                     System.out.println("value " + valueToAdd
                     + " was moved to index " + index);
+                    */
                     break;
                 }
             }
