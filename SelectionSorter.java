@@ -11,11 +11,14 @@ public class SelectionSorter extends Sorter {
     public SelectionSorter(  ArrayList< String> unordered) {
         super(unordered);
         list = unordered;
+        //Run reigningDweeb for positions 0 through n–2 in the list.
         for( int next = 0
            ; next < list.size() -1  // last needs no sort
            ; next++) {
              startAt = next;
              mySort();
+            //Swap it with the first value in the unsorted region,
+            //thereby expanding the sorted region 
             list.set( next, list.set( indexOfSmallest, list.get( next))
                           );
         }
@@ -30,6 +33,7 @@ public class SelectionSorter extends Sorter {
         for( int testAt = startAt +1
            ; testAt < list.size()
            ; testAt++)
+           //Find the smallest value in the unsorted region.
             if( list.get( testAt).compareTo( dweeb) < 0) {
                 // Found a smaller value. Remember it.
                 dweebAt = testAt;
