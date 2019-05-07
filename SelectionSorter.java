@@ -18,7 +18,7 @@ public class SelectionSorter extends Sorter {
              startAt = next;
              mySort();
             //Swap it with the first value in the unsorted region,
-            //thereby expanding the sorted region 
+            //thereby expanding the sorted region. 
             list.set( next, list.set( indexOfSmallest, list.get( next))
                           );
         }
