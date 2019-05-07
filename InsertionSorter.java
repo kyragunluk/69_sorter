@@ -39,7 +39,7 @@ public class InsertionSorter extends Sorter {
                 list.set(i,list.get(i-1));
             }
             //Insert the first unsorted element in its
-            //place in the current sorted region.
+            //place in the current sorted region
             list.set(0,valueToAdd);
             /* debugging
             System.out.println("value " + valueToAdd
