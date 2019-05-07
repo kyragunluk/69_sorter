@@ -34,6 +34,10 @@ public class InsertionSorter extends Sorter {
                 list.set(i,list.get(i-1));
             }
             list.set(0,valueToAdd);
+            // debugging
+            System.out.println("value " + valueToAdd
+            + " was moved to the beginning");
+
         }
         else{
             for (int index = alreadyInserted ; index > 0 ; index --){
@@ -42,6 +46,9 @@ public class InsertionSorter extends Sorter {
                         list.set(i,list.get(i-1));
                     }
                     list.set(index,valueToAdd);
+                    // debugging
+                    System.out.println("value " + valueToAdd
+                    + " was moved to index " + index);
                     break;
                 }
             }
